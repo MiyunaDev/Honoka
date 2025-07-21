@@ -2,7 +2,7 @@ AniList = require "./../../main/extensions/AniList"
 
 class Extension
     constructor: () ->
-        @extensions = []
+        @extensions = [AniList]
     
     # @param id {String}
     getExtension: (id)->

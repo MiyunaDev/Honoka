@@ -5,21 +5,21 @@ class AniList
         @baseUrl = "https://anilist.co/api/v2"
         @clientId = process.env.ANILIST_CLIENT_ID or 'your_client_id'
         @clientSecret = process.env.ANILIST_CLIENT_SECRET or 'your_client_secret'
-        @redirectUri = process.env.ANILIST_REDIRECT_URI or 'http://localhost:3000/callback'
+        @redirectUri = "#{process.env.DNS}#{process.env.ANILIST_REDIRECT_ENDPOINT}"
         @accessToken = null
     
     deployExpress: (app) ->
-        app.get '/login', (req, res) ->
-            authUrl = "https://anilist.co/api/v2/oauth/authorize?client_id=#{@ANILIST_CLIENT_ID}&redirect_uri=#{@ANILIST_REDIRECT_URI}&response_type=code"
+        app.get "/#{@name.toLocaleLowerCase()}/login", (req, res) ->
+            authUrl = "#{@baseUrl}/oauth/authorize?client_id=#{@ANILIST_CLIENT_ID}&redirect_uri=#{@ANILIST_REDIRECT_URI}&response_type=code"
             res.redirect authUrl
 
-            app.get '/callback', (req, res) ->
+            app.get process.env.ANILIST_REDIRECT_ENDPOINT, (req, res) ->
                 code = req.query.code
                 unless code
                     return res.status(400).send 'Authorization code is required.'
 
                 try
-                    response = await axios.post 'https://anilist.co/api/v2/oauth/token',
+                    response = await axios.post "#{@baseUrl}/oauth/token",
                         grant_type: 'authorization_code'
                         client_id: ANILIST_CLIENT_ID
                         client_secret: ANILIST_CLIENT_SECRET
