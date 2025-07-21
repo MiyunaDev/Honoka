@@ -137,3 +137,10 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# restricted data
+src/main/sources/
+src/main/data/Book/**/
+src/main/data/Book/**
+src/main/data/Movie/**/
+src/main/data/Movie/**
