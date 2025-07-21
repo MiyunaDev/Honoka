@@ -1,14 +1,14 @@
 class Source
     constructor: () ->
-        @extensions = []
+        @sources = []
     
     # @param id {String}
-    getExtension: (id)->
-        return @extensions.find (ext) ->
-            return ext.id is id
+    getSource: (id)->
+        return @sources.find (src) ->
+            return src.id is id
 
-    getExtensions: () ->
-        return @extensions.map (ext) ->
+    getSources: () ->
+        return @sources.map (ext) ->
             return ext
 
 

@@ -10,7 +10,7 @@ app.get '/', (req, res) ->
   res.send 'Hello from CoffeeScript + Express!'
 
 app.get '/sources', (req, res) ->
-  sources = await sourceManager.getExtensions().map (ext) ->
+  sources = await sourceManager.getSources().map (ext) ->
     {
       id: ext.id,
       name: ext.name,
@@ -39,7 +39,7 @@ app.get '/sources/:sourceId', (req, res) ->
   if not id
     return res.status(400).send({ message: "Source ID is required" })
   console.log sourceManager.extensions
-  ext = sourceManager.getExtension(id)
+  ext = sourceManager.getSource(id)
 
   return res.status(500).send {
     message: "Source with id #{id} not found"
@@ -72,7 +72,7 @@ app.get '/sources/:sourceId/latest', (req, res) ->
   id = req.params.sourceId
   if not id
     return res.status(400).send({ message: "Source ID is required" })
-  ext = sourceManager.getExtension(id)
+  ext = sourceManager.getSource(id)
 
   unless ext and typeof ext.getLatest is "function"
     return res.status(500).send {
@@ -101,7 +101,7 @@ app.get '/sources/:sourceId/browse', (req, res) ->
   id = req.params.sourceId
   if not id
     return res.status(400).send({ message: "Source ID is required" })
-  ext = sourceManager.getExtension(id)
+  ext = sourceManager.getSource(id)
 
   unless ext and typeof ext.getBrowse is "function"
     return res.status(500).send {
@@ -133,7 +133,7 @@ app.get '/sources/:sourceId/detail/:id', (req, res) ->
   sourceId = req.params.sourceId
   if not id or not sourceId
     return res.status(400).send({ message: "Source ID and Detail ID are required" })
-  ext = sourceManager.getExtension(sourceId)
+  ext = sourceManager.getSource(sourceId)
   unless ext and typeof ext.getDetail is "function"
     return res.status(500).send {
       message: "Source with id #{sourceId} does not support detail feature"
