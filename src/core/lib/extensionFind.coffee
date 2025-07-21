@@ -1,4 +1,6 @@
-class Source
+AniList = require "./../../main/extensions/AniList"
+
+class Extension
     constructor: () ->
         @extensions = []
     
@@ -12,4 +14,4 @@ class Source
             return ext
 
 
-module.exports = new Source()
+module.exports = new Extension()
