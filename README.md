@@ -1,8 +1,33 @@
-# Miyuna Project
+# Honoka Project
 
-Hello everyone >-<. Welcome to Project Miyuna. Now here miyuna has an important project, namely the Miyuna Client Project.
+Hello everyone! 👋 Welcome to the **Honoka Project**.
 
-Many may ask. What does it do? It's actually easy. Where I want to create a special backend to store history, tracking, and do reading, and watching activities in one place. Therefore miyuna exists
+Honoka is a personal project that focuses on developing a specialized client system — the **Honoka Client Project**. This system is designed to help store history, track activities, and manage reading and watching habits — all in one place.
 
-> [!WARNING]\
-> Before you do anything with this system to install on your personal server. **You are strongly obliged and must read our terms and policies. In ![the disclaimer we wrote here](./DISCLAIMER.md) and ![Own License wrote here](./LICENSE.md)**. If you have installed both the application and the system on your personal device. We assume that you are willing to comply with our rules and policies. **Afterwards what you do and what you do is beyond our reach and action**.
+---
+
+## 📌 What Is It For?
+
+You might be wondering: *"What does this actually do?"*
+
+Simply put, Honoka is a personal backend system created to log and track your daily activities — like reading books, watching shows, or any other activity you want to record privately and efficiently.
+
+---
+
+## ⚠️ Important Notice
+
+> **Before installing or using this system on your personal server, you are required to read and agree to our terms and policies.**
+>
+> Please review the following documents:
+>
+> - [DISCLAIMER.md](./DISCLAIMER.md)
+> - [LICENSE.md](./LICENSE.md)
+>
+> By installing and using this application or system on your personal device, **you are acknowledging and agreeing to follow our rules and policies**.
+>
+> Any actions or consequences that occur after installation are entirely beyond our control and responsibility.
+
+---
+
+If you're interested in exploring further, contributing, or even just trying it out — feel free to dig into this repository.  
+Thanks for stopping by! 💜
