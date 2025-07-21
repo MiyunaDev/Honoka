@@ -1,0 +1,25 @@
+{
+  "name": "miyunaclient",
+  "version": "1.0.0",
+  "main": "src/index.coffee",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "nodemon",
+    "build": "coffee --compile --output dist/ src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.10.0",
+    "cheerio": "^1.1.0",
+    "express": "^5.1.0",
+    "string-similarity": "^4.0.4",
+    "yt-search": "^2.13.1"
+  },
+  "devDependencies": {
+    "coffeescript": "^2.7.0",
+    "nodemon": "^3.1.10"
+  }
+}
