@@ -29,5 +29,15 @@ Simply put, Honoka is a personal backend system created to log and track your da
 
 ---
 
-If you're interested in exploring further, contributing, or even just trying it out — feel free to dig into this repository.  
+## 📄 Licensing & Usage Terms
+
+> 🔒 **This is not an open-source project.**
+
+> ✅ You are allowed to **store this code privately** and **self-host it for personal, non-commercial use only**.
+
+> 🚫 You are **not allowed to redistribute, modify for public release, or use this project for any commercial purposes** without explicit permission from the creator.
+
+---
+
+If you're interested in exploring further or trying it out for your own personal use — feel free to browse the repository.  
 Thanks for stopping by! 💜
