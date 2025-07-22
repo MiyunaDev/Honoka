@@ -1,8 +1,9 @@
+MyAnimeList = require "../../../dist/main/extensions/MyAnimeList"
 AniList = require "./../../main/extensions/AniList"
 
 class Extension
     constructor: () ->
-        @extensions = [AniList]
+        @extensions = [AniList, MyAnimeList]
     
     # @param id {String}
     getExtension: (id)->
