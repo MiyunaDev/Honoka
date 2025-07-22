@@ -6,7 +6,9 @@ Honoka is a personal project that focuses on developing a specialized client sys
 
 ---
 
-## 📌 What Is It For?
+## Must Read
+
+### 📌 What Is It For?
 
 You might be wondering: *"What does this actually do?"*
 
@@ -14,7 +16,7 @@ Simply put, Honoka is a personal backend system created to log and track your da
 
 ---
 
-## ⚠️ Important Notice
+### ⚠️ Important Notice
 
 > **Before installing or using this system on your personal server, you are required to read and agree to our terms and policies.**
 >
@@ -29,7 +31,7 @@ Simply put, Honoka is a personal backend system created to log and track your da
 
 ---
 
-## 📄 Licensing & Usage Terms
+### 📄 Licensing & Usage Terms
 
 > 🔒 **This is not an open-source project.**
 
@@ -41,3 +43,31 @@ Simply put, Honoka is a personal backend system created to log and track your da
 
 If you're interested in exploring further or trying it out for your own personal use — feel free to browse the repository.  
 Thanks for stopping by! 💜
+
+## Configuration
+
+
+
+## Extensions
+
+Provided extension from miyuna is
+
+### MyAnimeList (Track record integration have)
+
+```env
+# MyAnimeList API credentials
+# You can obtain these by creating an application on the MyAnimeList developer portal
+MAL_CLIENT_ID="paste client id here" # Get from MyAnimeList website
+MAL_CLIENT_SECRET="paste client server here" # Get from MyAnimeList website
+MAL_REDIRECT_URI="/callback"
+MAL_PKCE_CODE_VERIFIER="create random string min 45 digit and max 100 digit"
+```
+
+### Anilist (Track record integration have)
+
+```env
+# Anilist API credentials
+# You can obtain these by creating an application on the Anilist developer portal
+ANILIST_CLIENT_ID="paste client id here" # Get from AniList website
+ANILIST_CLIENT_SECRET="paste client server here" # Get from AniList website
+ANILIST_REDIRECT_ENDPOINT="/callback"

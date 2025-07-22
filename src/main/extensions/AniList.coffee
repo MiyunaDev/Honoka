@@ -8,7 +8,7 @@ class AniList
         @baseUrl = "https://anilist.co/api/v2"
         @clientId = process.env.ANILIST_CLIENT_ID
         @clientSecret = process.env.ANILIST_CLIENT_SECRET
-        @redirectUri = "#{process.env.DNS}/extensions/#{@name.toLocaleLowerCase()}#{process.env.ANILIST_REDIRECT_ENDPOINT}"
+        @redirectUri = "#{process.env.HONOKA_DNS}/extensions/#{@name.toLocaleLowerCase()}#{process.env.ANILIST_REDIRECT_ENDPOINT}"
         @accessToken = null
     
     deployExpress: (opt) ->
@@ -24,7 +24,7 @@ class AniList
             code = req.query.code
             unless code
                 return res.status(400).send 'Authorization code is required.'
-                
+
             try
                 response = await axios.post "#{opt.baseUrl}/oauth/token",
                     grant_type: 'authorization_code'

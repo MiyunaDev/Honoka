@@ -8,7 +8,7 @@ class MyAnimeList
         @baseUrl = "https://myanimelist.net/v1"
         @clientId = process.env.MAL_CLIENT_ID
         @clientSecret = process.env.MAL_CLIENT_SECRET
-        @redirectUri = "#{process.env.DNS}/extensions/#{@name.toLocaleLowerCase()}#{process.env.MAL_REDIRECT_URI}"
+        @redirectUri = "#{process.env.HONOKA_DNS}/extensions/#{@name.toLocaleLowerCase()}#{process.env.MAL_REDIRECT_URI}"
         @pkceCodeChallenge = process.env.MAL_PKCE_CODE_VERIFIER
         @pkceCodeVerifier = process.env.MAL_PKCE_CODE_VERIFIER
     
