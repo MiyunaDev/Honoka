@@ -1,4 +1,8 @@
+dotenv = require 'dotenv'
+dotenv.config()
+
 sourceManager = require './core/lib/sourceFind'
+extensionManager = require './core/lib/extensionFind'
 express = require 'express'
 yts = require 'yt-search'
 
@@ -154,6 +158,40 @@ app.get '/sources/:sourceId/detail/:id', (req, res) ->
       message: "Failed to get detail from #{ext.name}",
       error: error.message
     })
+
+app.get '/extensions', (req, res) ->
+  extensions = await extensionManager.getExtensions().map (ext) ->
+    {
+      id: ext.id,
+      name: ext.name
+    }
+  res.status(200).send({
+      message: "Available extebsions",
+      data: extensions
+    })
+
+app.get '/extensions/:extensionId', (req, res) ->
+  id = req.params.extensionId
+  if not id
+    return res.status(400).send({ message: "Extension ID is required" })
+  ext = extensionManager.getExtension(id)
+
+  return res.status(500).send {
+    message: "Extension with id #{id} not found"
+  } unless ext
+
+  res.send({
+    message:"Success get #{ext.name}",
+    data: {
+      id: ext.id,
+      name: ext.name
+    }
+  })
+
+extensionManager.extensions.forEach (ext) ->
+  if typeof ext.deployExpress is "function"
+    routes = ext.deployExpress(ext)
+    app.use "/extensions/#{ext.name.toLocaleLowerCase()}", routes
 
 app.listen port, ->
   console.log "Server is running at http://localhost:#{port}"
